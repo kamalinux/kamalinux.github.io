@@ -44,18 +44,4 @@
                 />
   </url>
   
-  <url>
-    <loc>https://kamalinux.github.io/ar/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kamalinux.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://kamalinux.github.io/ar/tags/"
-                />
-  </url>
-  
 </urlset>
