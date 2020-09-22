@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Kamal Elsayed</title>
+        <title>Posts on kamalinux</title>
         <link>https://kamalinux.github.io/posts/</link>
-        <description>Recent content in Posts on Kamal Elsayed</description>
-        <generator> -- kamalinux</generator>
+        <description>Recent content in Posts on kamalinux</description>
+        <generator>Kamal Elsayed -- kamalinux</generator>
         <language>en-us</language>
         <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://kamalinux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
