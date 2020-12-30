@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/root/Desktop/myproject/project/blog",
+	"sourceRoot": "/home/kamalinux/Documents/myproject/project/blog",
 	"sources": [
 		"assets/scss/main.scss",
 		"assets/scss/_normalize.scss",
