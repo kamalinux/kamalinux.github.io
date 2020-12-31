@@ -139,7 +139,7 @@ function close_session()
 
 
 <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>The PHP script makes use of <code>/auth_helpers/check_auth</code> to authenticate users, and we can download the file (<a href="http://openkeys.htb/auth_helpers/check_auth">http://openkeys.htb/auth_helpers/check_auth</a>) , which is an OpenBSD shared object.</p>
+</span></code></pre></div><p>The PHP script makes use of <code>/auth_helpers/check_auth</code> to authenticate users, and we can download the file <a href="http://openkeys.htb/auth_helpers/check_auth">Here</a> , which is an OpenBSD shared object.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@kamalinux:~/Downloads# file check_auth 
 check_auth: ELF 64-bit LSB shared object, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /usr/libexec/ld.so, <span style="color:#66d9ef">for</span> OpenBSD, not stripped
 </code></pre></div><p>The target is running OpenBSD Authentication, and is vulnerable to an authentication bypass:
@@ -185,9 +185,7 @@ openkeys$ cat user.txt
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">openkeys$ uname -a                                                                                        
 OpenBSD openkeys.htb 6.6 GENERIC#353 amd64
 </code></pre></div><p>Searching for privilege escalation exploits affecting this release of OpenBSD leads to CVE-2019-19520:</p>
-<ul>
-<li>Description: xlock in OpenBSD 6.6 allows local users to gain the privileges of the auth group by providing a <code>LIBGL_DRIVERS_PATH</code> environment variable, because <code>xenocara/lib/mesa/src/loader/loader.c</code> mishandles dlopen. <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-19520">Naked Security</a></li>
-</ul>
+<p>Description: xlock in OpenBSD 6.6 allows local users to gain the privileges of the auth group by providing a <code>LIBGL_DRIVERS_PATH</code> environment variable, because xenocara/lib/mesa/src/loader/loader.c mishandles dlopen. <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-19520">Naked Security</a></p>
 <p>An exploit can be downloaded <a href="https://raw.githubusercontent.com/bcoles/local-exploits/master/CVE-2019-19520/openbsd-authroot">here</a> . Let’s uplaod it to the target:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@kamalinux:~# scp -i jennifer.key openbsd-authroot jennifer@openkeys.htb:/tmp
 </code></pre></div><p>Another Way: You can open <code>nano openbsd-authroot</code> and copy&amp;paste the exploit code.</p>
