@@ -14,7 +14,7 @@
       
       <guid>https://kamalinux.github.io/posts/2020/12/en-hackthebox-openkeys/</guid>
       <description>Introduction OpenKeys is a OpenBSD Box, created by polarbearer &amp;amp; GibParadox. Initial foothold was Bypassing Authentication by using a CVE-2019-19521. which get us user private key. Privilege Escalation as also related to CVE.
-OS | Difficulty | Release | IP ----------------------------------------------------------------- OpenBSD | Medium | 25 Jul 2020 | 10.10.10.199 1. Reconnaissance First thing add the IP address to /etc/hosts and the host name is openkeys.htb
+OS | Difficulty | Release | IP ----------------------------------------------------------------- OpenBSD | Medium | 25 Jul 2020 | 10.10.10.199 1. Reconnaissance First thing, add the IP address to /etc/hosts and the host name is openkeys.htb
 echo &amp;#34;10.10.10.199 openkeys.htb&amp;#34; &amp;gt;&amp;gt; /etc/hosts 1.</description>
     </item>
     
