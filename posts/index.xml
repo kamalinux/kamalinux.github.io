@@ -5,11 +5,49 @@
         <description>Recent content in Posts on kamalinux</description>
         <generator>Kamal Elsayed -- kamalinux</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://kamalinux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>[EN] HackTheBox - OpenKeyS</title>
+            <title>[EN] - HackTheBox - Omni</title>
+            <link>https://kamalinux.github.io/posts/2021/01/en-hackthebox-omni/</link>
+            <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+            
+            <guid>https://kamalinux.github.io/posts/2021/01/en-hackthebox-omni/</guid>
+            <description>Introduction OS | Difficulty | Release | IP ----------------------------------------------------------------- Other | Easy | 22 Aug 2020 | 10.10.10.204 Writeup available after machine retired</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+    <img src="/src/omni/omni1.png"  alt="Omni"  class="center"  style="border-radius: 8px;"  />
+
+
+<pre><code class="language-table" data-lang="table">    OS      |   Difficulty   |     Release     |        IP       
+-----------------------------------------------------------------
+   Other    |      Easy      |   22 Aug 2020   |   10.10.10.204  
+</code></pre><p>Writeup available after machine retired</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>[EN] - HackTheBox - Ready</title>
+            <link>https://kamalinux.github.io/posts/2021/01/en-hackthebox-ready/</link>
+            <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+            
+            <guid>https://kamalinux.github.io/posts/2021/01/en-hackthebox-ready/</guid>
+            <description>Introduction OS | Difficulty | Release | IP ----------------------------------------------------------------- Linux | Medium | 12 Dec 2020 | 10.10.10.220 Writeup available after machine retired</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+    <img src="/src/ready/ready1.png"  alt="Ready"  class="center"  style="border-radius: 8px;"  />
+
+
+<pre><code class="language-table" data-lang="table">    OS      |   Difficulty   |     Release     |        IP       
+-----------------------------------------------------------------
+   Linux    |     Medium     |   12 Dec 2020   |   10.10.10.220  
+</code></pre><p>Writeup available after machine retired</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>[EN] - HackTheBox - OpenKeyS</title>
             <link>https://kamalinux.github.io/posts/2020/12/en-hackthebox-openkeys/</link>
             <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
             
