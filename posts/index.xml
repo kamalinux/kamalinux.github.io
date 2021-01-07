@@ -9,7 +9,7 @@
         <atom:link href="https://kamalinux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>[EN] - HackTheBox - Omni</title>
+            <title>[EN] HackTheBox - Omni</title>
             <link>https://kamalinux.github.io/posts/2021/01/en-hackthebox-omni/</link>
             <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
             
@@ -28,7 +28,7 @@
         </item>
         
         <item>
-            <title>[EN] - HackTheBox - Ready</title>
+            <title>[EN] HackTheBox - Ready</title>
             <link>https://kamalinux.github.io/posts/2021/01/en-hackthebox-ready/</link>
             <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
             
@@ -47,7 +47,7 @@
         </item>
         
         <item>
-            <title>[EN] - HackTheBox - OpenKeyS</title>
+            <title>[EN] HackTheBox - OpenKeyS</title>
             <link>https://kamalinux.github.io/posts/2020/12/en-hackthebox-openkeys/</link>
             <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
             
