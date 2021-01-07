@@ -36,7 +36,7 @@
             <description>Introduction OS | Difficulty | Release | IP ----------------------------------------------------------------- Linux | Medium | 12 Dec 2020 | 10.10.10.220 Writeup available after machine retired</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 
-    <img src="/src/ready/ready1.png"  alt="Ready"  class="center"  style="border-radius: 8px;"  />
+    <img src="/src/2021/htb/ready/ready1.png"  alt="Ready"  class="center"  style="border-radius: 8px;"  />
 
 
 <pre><code class="language-table" data-lang="table">    OS      |   Difficulty   |     Release     |        IP       
@@ -57,7 +57,7 @@ OS | Difficulty | Release | IP -------------------------------------------------
 echo &amp;#34;10.10.10.199 openkeys.htb&amp;#34; &amp;gt;&amp;gt; /etc/hosts 1.</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 
-    <img src="/src/openkeys/openkeys0.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
+    <img src="/src/2020/openkeys/openkeys0.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
 
 
 <p>OpenKeys is a OpenBSD Box, created by polarbearer &amp; GibParadox. Initial foothold was Bypassing Authentication by using a CVE-2019-19521. which get us user private key. Privilege Escalation as also related to CVE.</p>
@@ -87,7 +87,7 @@ Nmap done: 1 IP address (1 host up) scanned in 58.12 seconds
 </code></pre></div><p>There is port 22 for SSH and 80 for HTTP</p>
 <p>Opening the page in browser we see an login screen.</p>
 
-    <img src="/src/openkeys/openkeys2.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
+    <img src="/src/2020/openkeys/openkeys2.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
 
 
 <h3 id="12-directory-brute-force">1.2 Directory Brute Force</h3>
@@ -103,7 +103,7 @@ Nmap done: 1 IP address (1 host up) scanned in 58.12 seconds
 /fonts (Status: 301)
 </code></pre></div><p>The <code>/includes</code> directory allows files listing and reveals the presence of <code>auth.php.swp</code>, which is a vim swap file. Dumping the strings of this file discloses a username: <code>jennifer</code>.</p>
 
-    <img src="/src/openkeys/openkeys1.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
+    <img src="/src/2020/openkeys/openkeys1.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
 
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">root@kamalinux:~# strings auth.php.swp | head
@@ -188,12 +188,12 @@ This credentials allows to bypass the authentication:</p>
 password: password
 </code></pre><p>Intercept the request in BurpSuite and append <code>; username=jennifer</code> to the Cookie string as follows:</p>
 
-    <img src="/src/openkeys/openkeys4.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
+    <img src="/src/2020/openkeys/openkeys4.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
 
 
 <p>Forward the requests in BurpSuite and you will be redirected to <code>/sshkey.php</code> with Jennifer’s SSH private key:</p>
 
-    <img src="/src/openkeys/openkeys3.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
+    <img src="/src/2020/openkeys/openkeys3.png"  alt="OpenKeyS"  class="center"  style="border-radius: 8px;"  />
 
 
 <h2 id="2-exploitation">2. Exploitation</h2>
