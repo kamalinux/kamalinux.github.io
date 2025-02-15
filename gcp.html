@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Metadata Request</title>
+</head>
+<body>
+    <h2>Metadata Request Test</h2>
+    <div id="result"></div>
+
+    <script>
+        async function fetchMetadata() {
+            const url = 'http://169.254.169.254/latest/meta-data/';
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Metadata-Flavor': 'Google'
+                    }
+                });
+                
+                if (response.ok) {
+                    const text = await response.text();
+                    resultDiv.innerHTML = `<pre>${text}</pre>`;
+                } else {
+                    resultDiv.innerHTML = `Error: ${response.status} ${response.statusText}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `Request failed: ${error.message}`;
+            }
+        }
+
+        // Call the function when the page loads
+        fetchMetadata();
+    </script>
+</body>
+</html>
